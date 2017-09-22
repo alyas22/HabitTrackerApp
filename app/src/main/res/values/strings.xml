@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Habit Tracker App</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="habit_name"> Habit Name </string>
+    <string name="repeat">Repeat</string>
+
+    <string name="insert_data">Insert habit</string>
+    <string name="delete_all_data">Delete all habits</string>
+
+    <string name="enter_habit">Please Enter the Habit Name</string>
+    <string name="enter_repeat">Please Enter the Repeat Number</string>
+
+    <string name="error_saving_data">Error with saving</string>
+    <string name="habit_saved">Habit saved with row id: </string>
+
+    <string name="database_empty">The Database is empty </string>
+
+</resources>
