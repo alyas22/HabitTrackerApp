@@ -54,8 +54,7 @@ public class MainActivity extends AppCompatActivity {
         displayDatabaseInfo();
     }
 
-    private void displayDatabaseInfo() {
-
+    public Cursor query() {
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
         String[] projection = {
                 HabitEntry._ID,
@@ -70,6 +69,12 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 null,
                 null);
+        return cursor;
+    }
+
+    private void displayDatabaseInfo() {
+
+        Cursor cursor = query();
 
         TextView displayView = (TextView) findViewById(R.id.text_view);
         try {
@@ -127,17 +132,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == R.id.action_insert_dummy_data) {
-            insertHabit();
-            displayDatabaseInfo();
-            return true;
-        }
-        if (id == R.id.action_delete_all_entries) {
-            deleteHabit();
-            displayDatabaseInfo();
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_insert_dummy_data:
+                insertHabit();
+                displayDatabaseInfo();
+                return true;
+
+            case R.id.action_delete_all_entries:
+                deleteHabit();
+                displayDatabaseInfo();
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
